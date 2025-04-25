@@ -88,7 +88,7 @@
             this.tblPessoaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.tblPessoaBindingNavigator.BindingSource = this.tblPessoaBindingSource;
             this.tblPessoaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.tblPessoaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.tblPessoaBindingNavigator.DeleteItem = null;
             this.tblPessoaBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tblPessoaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -110,7 +110,7 @@
             this.tblPessoaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tblPessoaBindingNavigator.Name = "tblPessoaBindingNavigator";
             this.tblPessoaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tblPessoaBindingNavigator.Size = new System.Drawing.Size(1252, 33);
+            this.tblPessoaBindingNavigator.Size = new System.Drawing.Size(1252, 38);
             this.tblPessoaBindingNavigator.TabIndex = 0;
             this.tblPessoaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -188,7 +188,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorDeleteItem
@@ -197,8 +197,9 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // tblPessoaBindingNavigatorSaveItem
             // 

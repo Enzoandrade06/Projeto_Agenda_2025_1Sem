@@ -39,5 +39,13 @@ namespace Projeto_Agenda_2025_1Sem.Formulários
             this.tblPessoaTableAdapter.Fill(this.dataSet_Agenda.tblPessoa);
 
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma Exclusão?", "Excluindo Registro...", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                tblPessoaBindingSource.RemoveCurrent();
+            }
+        }
     }
 }
