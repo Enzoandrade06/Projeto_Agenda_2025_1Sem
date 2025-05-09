@@ -29,5 +29,12 @@ namespace Projeto_Agenda_2025_1Sem
             objCadtblPessoa.MdiParent = this;
             objCadtblPessoa.Show();
         }
+
+        private void pessoasFiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaPessoas objContblPessoa = new frmConsultaPessoas();
+            objContblPessoa.MdiParent = this;
+            objContblPessoa.Show();
+        }
     }
 }

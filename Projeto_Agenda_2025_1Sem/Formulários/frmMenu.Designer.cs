@@ -30,10 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoasFiltroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +61,24 @@
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(107, 29);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
+            // pessoasToolStripMenuItem
+            // 
+            this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
+            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
+            this.pessoasToolStripMenuItem.Text = "Pessoas";
+            this.pessoasToolStripMenuItem.Click += new System.EventHandler(this.pessoasToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
+            this.sairToolStripMenuItem.Text = "&Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pessoasFiltroToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -72,19 +89,12 @@
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
-            // pessoasToolStripMenuItem
+            // pessoasFiltroToolStripMenuItem
             // 
-            this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
-            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.pessoasToolStripMenuItem.Text = "Pessoas";
-            this.pessoasToolStripMenuItem.Click += new System.EventHandler(this.pessoasToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.sairToolStripMenuItem.Text = "&Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.pessoasFiltroToolStripMenuItem.Name = "pessoasFiltroToolStripMenuItem";
+            this.pessoasFiltroToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pessoasFiltroToolStripMenuItem.Text = "Pessoas(Filtro)";
+            this.pessoasFiltroToolStripMenuItem.Click += new System.EventHandler(this.pessoasFiltroToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -113,5 +123,6 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pessoasFiltroToolStripMenuItem;
     }
 }
