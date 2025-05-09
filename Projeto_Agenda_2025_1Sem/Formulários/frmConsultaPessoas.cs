@@ -26,7 +26,7 @@ namespace Projeto_Agenda_2025_1Sem.Formulários
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            tblPessoaBindingSource.Filter = "Nome like '%" + txtPesquisa.Text + "%'";
+            tblPessoaBindingSource.Filter = "Nome like '%" + vTexto.Text + "%'";
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -36,6 +36,27 @@ namespace Projeto_Agenda_2025_1Sem.Formulários
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void filtCond_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (vProcurar.Text == "Que começa com")
+            {
+                vFiltro.Text += " like '" + vTexto.Text + "%'";
+            }
+            else if (vProcurar.Text == "Que contém")
+            {
+                vFiltro.Text += " like '%" + vTexto + "%'";
+            }
+            else if (vProcurar.Text == "Que termina com")
+            {
+
+            }
+            else if (vProcurar.Text == "Igual a")
+            {
+                vFiltro.Text += " = '" + vTexto.Text + "'%"; 
+            }
 
         }
     }

@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.vTexto = new System.Windows.Forms.TextBox();
+            this.vFiltro = new System.Windows.Forms.ComboBox();
+            this.vProcurar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataSet_Agenda = new Projeto_Agenda_2025_1Sem.Dados.DataSet_Agenda();
-            this.tblPessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblPessoaTableAdapter = new Projeto_Agenda_2025_1Sem.Dados.DataSet_AgendaTableAdapters.tblPessoaTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,41 +40,50 @@
             this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblPessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Agenda = new Projeto_Agenda_2025_1Sem.Dados.DataSet_Agenda();
+            this.filtNome = new System.Windows.Forms.ComboBox();
+            this.tblPessoaTableAdapter = new Projeto_Agenda_2025_1Sem.Dados.DataSet_AgendaTableAdapters.tblPessoaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPessoaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtPesquisa
+            // vTexto
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(322, 43);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(198, 26);
-            this.txtPesquisa.TabIndex = 0;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            this.vTexto.Location = new System.Drawing.Point(206, 29);
+            this.vTexto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vTexto.Name = "vTexto";
+            this.vTexto.Size = new System.Drawing.Size(133, 20);
+            this.vTexto.TabIndex = 0;
+            this.vTexto.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
-            // comboBox1
+            // vFiltro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.vFiltro.FormattingEnabled = true;
+            this.vFiltro.Items.AddRange(new object[] {
             "Todos",
             "Que começa com",
             "Que contém ",
-            "Que termina com"});
-            this.comboBox1.Location = new System.Drawing.Point(180, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 1;
+            "Que termina com",
+            "Igual a"});
+            this.vFiltro.Location = new System.Drawing.Point(120, 28);
+            this.vFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vFiltro.Name = "vFiltro";
+            this.vFiltro.Size = new System.Drawing.Size(82, 21);
+            this.vFiltro.TabIndex = 1;
+            this.vFiltro.SelectedIndexChanged += new System.EventHandler(this.filtCond_SelectedIndexChanged);
             // 
-            // btnFiltrar
+            // vProcurar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(535, 43);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 28);
-            this.btnFiltrar.TabIndex = 2;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.vProcurar.Location = new System.Drawing.Point(357, 28);
+            this.vProcurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vProcurar.Name = "vProcurar";
+            this.vProcurar.Size = new System.Drawing.Size(50, 18);
+            this.vProcurar.TabIndex = 2;
+            this.vProcurar.Text = "Filtrar";
+            this.vProcurar.UseVisualStyleBackColor = true;
+            this.vProcurar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // dataGridView1
             // 
@@ -93,44 +98,14 @@
             this.emailDataGridViewTextBoxColumn,
             this.dataNascimentoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tblPessoaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 64);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(735, 232);
+            this.dataGridView1.Size = new System.Drawing.Size(490, 151);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "ID",
-            "Nome",
-            "Endereço",
-            "Cidade",
-            "Telefone",
-            "Email",
-            "Data de Nascimento"});
-            this.comboBox2.Location = new System.Drawing.Point(53, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // dataSet_Agenda
-            // 
-            this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
-            this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblPessoaBindingSource
-            // 
-            this.tblPessoaBindingSource.DataMember = "tblPessoa";
-            this.tblPessoaBindingSource.DataSource = this.dataSet_Agenda;
-            // 
-            // tblPessoaTableAdapter
-            // 
-            this.tblPessoaTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -147,6 +122,7 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomeDataGridViewTextBoxColumn.Width = 150;
             // 
             // endereçoDataGridViewTextBoxColumn
@@ -155,6 +131,7 @@
             this.endereçoDataGridViewTextBoxColumn.HeaderText = "Endereço";
             this.endereçoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.endereçoDataGridViewTextBoxColumn.Name = "endereçoDataGridViewTextBoxColumn";
+            this.endereçoDataGridViewTextBoxColumn.ReadOnly = true;
             this.endereçoDataGridViewTextBoxColumn.Width = 150;
             // 
             // cidadeDataGridViewTextBoxColumn
@@ -163,6 +140,7 @@
             this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
             this.cidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cidadeDataGridViewTextBoxColumn.Width = 150;
             // 
             // telefoneDataGridViewTextBoxColumn
@@ -171,6 +149,7 @@
             this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
             this.telefoneDataGridViewTextBoxColumn.Width = 150;
             // 
             // emailDataGridViewTextBoxColumn
@@ -179,6 +158,7 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 150;
             // 
             // dataNascimentoDataGridViewTextBoxColumn
@@ -187,24 +167,58 @@
             this.dataNascimentoDataGridViewTextBoxColumn.HeaderText = "DataNascimento";
             this.dataNascimentoDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
+            this.dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataNascimentoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tblPessoaBindingSource
+            // 
+            this.tblPessoaBindingSource.DataMember = "tblPessoa";
+            this.tblPessoaBindingSource.DataSource = this.dataSet_Agenda;
+            // 
+            // dataSet_Agenda
+            // 
+            this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
+            this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // filtNome
+            // 
+            this.filtNome.FormattingEnabled = true;
+            this.filtNome.Items.AddRange(new object[] {
+            "ID",
+            "Nome",
+            "Endereço",
+            "Cidade",
+            "Telefone",
+            "Email",
+            "Data de Nascimento"});
+            this.filtNome.Location = new System.Drawing.Point(35, 28);
+            this.filtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filtNome.Name = "filtNome";
+            this.filtNome.Size = new System.Drawing.Size(82, 21);
+            this.filtNome.TabIndex = 4;
+            this.filtNome.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // tblPessoaTableAdapter
+            // 
+            this.tblPessoaTableAdapter.ClearBeforeFill = true;
             // 
             // frmConsultaPessoas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.filtNome);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnFiltrar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.vProcurar);
+            this.Controls.Add(this.vFiltro);
+            this.Controls.Add(this.vTexto);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaPessoas";
             this.Text = "Consulta de Pessoas";
             this.Load += new System.EventHandler(this.frmConsultaPessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPessoaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Agenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,11 +226,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.TextBox vTexto;
+        private System.Windows.Forms.ComboBox vFiltro;
+        private System.Windows.Forms.Button vProcurar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox filtNome;
         private Dados.DataSet_Agenda dataSet_Agenda;
         private System.Windows.Forms.BindingSource tblPessoaBindingSource;
         private Dados.DataSet_AgendaTableAdapters.tblPessoaTableAdapter tblPessoaTableAdapter;
