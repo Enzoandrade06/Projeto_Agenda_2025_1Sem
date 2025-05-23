@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.vTexto = new System.Windows.Forms.TextBox();
-            this.vFiltro = new System.Windows.Forms.ComboBox();
+            this.cbdOrientacao = new System.Windows.Forms.ComboBox();
             this.vProcurar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             this.dataNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblPessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Agenda = new Projeto_Agenda_2025_1Sem.Dados.DataSet_Agenda();
-            this.filtNome = new System.Windows.Forms.ComboBox();
+            this.txtFiltro = new System.Windows.Forms.ComboBox();
             this.tblPessoaTableAdapter = new Projeto_Agenda_2025_1Sem.Dados.DataSet_AgendaTableAdapters.tblPessoaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPessoaBindingSource)).BeginInit();
@@ -51,35 +51,30 @@
             // 
             // vTexto
             // 
-            this.vTexto.Location = new System.Drawing.Point(206, 29);
-            this.vTexto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vTexto.Location = new System.Drawing.Point(309, 45);
             this.vTexto.Name = "vTexto";
-            this.vTexto.Size = new System.Drawing.Size(133, 20);
+            this.vTexto.Size = new System.Drawing.Size(198, 26);
             this.vTexto.TabIndex = 0;
             this.vTexto.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
-            // vFiltro
+            // cbdOrientacao
             // 
-            this.vFiltro.FormattingEnabled = true;
-            this.vFiltro.Items.AddRange(new object[] {
-            "Todos",
-            "Que começa com",
-            "Que contém ",
-            "Que termina com",
-            "Igual a"});
-            this.vFiltro.Location = new System.Drawing.Point(120, 28);
-            this.vFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.vFiltro.Name = "vFiltro";
-            this.vFiltro.Size = new System.Drawing.Size(82, 21);
-            this.vFiltro.TabIndex = 1;
-            this.vFiltro.SelectedIndexChanged += new System.EventHandler(this.filtCond_SelectedIndexChanged);
+            this.cbdOrientacao.FormattingEnabled = true;
+            this.cbdOrientacao.Items.AddRange(new object[] {
+            "Possui",
+            "Inicia com",
+            "Finaliza com"});
+            this.cbdOrientacao.Location = new System.Drawing.Point(180, 43);
+            this.cbdOrientacao.Name = "cbdOrientacao";
+            this.cbdOrientacao.Size = new System.Drawing.Size(121, 28);
+            this.cbdOrientacao.TabIndex = 1;
+            this.cbdOrientacao.SelectedIndexChanged += new System.EventHandler(this.filtCond_SelectedIndexChanged);
             // 
             // vProcurar
             // 
-            this.vProcurar.Location = new System.Drawing.Point(357, 28);
-            this.vProcurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vProcurar.Location = new System.Drawing.Point(536, 43);
             this.vProcurar.Name = "vProcurar";
-            this.vProcurar.Size = new System.Drawing.Size(50, 18);
+            this.vProcurar.Size = new System.Drawing.Size(75, 28);
             this.vProcurar.TabIndex = 2;
             this.vProcurar.Text = "Filtrar";
             this.vProcurar.UseVisualStyleBackColor = true;
@@ -98,13 +93,12 @@
             this.emailDataGridViewTextBoxColumn,
             this.dataNascimentoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tblPessoaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 64);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(52, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(490, 151);
+            this.dataGridView1.Size = new System.Drawing.Size(735, 232);
             this.dataGridView1.TabIndex = 3;
             // 
             // iDDataGridViewTextBoxColumn
@@ -180,10 +174,10 @@
             this.dataSet_Agenda.DataSetName = "DataSet_Agenda";
             this.dataSet_Agenda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // filtNome
+            // txtFiltro
             // 
-            this.filtNome.FormattingEnabled = true;
-            this.filtNome.Items.AddRange(new object[] {
+            this.txtFiltro.FormattingEnabled = true;
+            this.txtFiltro.Items.AddRange(new object[] {
             "ID",
             "Nome",
             "Endereço",
@@ -191,12 +185,11 @@
             "Telefone",
             "Email",
             "Data de Nascimento"});
-            this.filtNome.Location = new System.Drawing.Point(35, 28);
-            this.filtNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.filtNome.Name = "filtNome";
-            this.filtNome.Size = new System.Drawing.Size(82, 21);
-            this.filtNome.TabIndex = 4;
-            this.filtNome.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.txtFiltro.Location = new System.Drawing.Point(52, 43);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(121, 28);
+            this.txtFiltro.TabIndex = 4;
+            this.txtFiltro.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // tblPessoaTableAdapter
             // 
@@ -204,15 +197,14 @@
             // 
             // frmConsultaPessoas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
-            this.Controls.Add(this.filtNome);
+            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.vProcurar);
-            this.Controls.Add(this.vFiltro);
+            this.Controls.Add(this.cbdOrientacao);
             this.Controls.Add(this.vTexto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmConsultaPessoas";
             this.Text = "Consulta de Pessoas";
             this.Load += new System.EventHandler(this.frmConsultaPessoas_Load);
@@ -227,10 +219,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox vTexto;
-        private System.Windows.Forms.ComboBox vFiltro;
+        private System.Windows.Forms.ComboBox cbdOrientacao;
         private System.Windows.Forms.Button vProcurar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox filtNome;
+        private System.Windows.Forms.ComboBox txtFiltro;
         private Dados.DataSet_Agenda dataSet_Agenda;
         private System.Windows.Forms.BindingSource tblPessoaBindingSource;
         private Dados.DataSet_AgendaTableAdapters.tblPessoaTableAdapter tblPessoaTableAdapter;
