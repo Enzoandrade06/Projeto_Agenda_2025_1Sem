@@ -26,8 +26,8 @@ namespace Projeto_Agenda_2025_1Sem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.255.252;Initial Catalog=db_241245;User ID=241245;Password=Gael" +
-            "250919!;Encrypt=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.255.252;Initial Catalog=db_241245;User ID=241245;Password=Izab" +
+            "ela200307;Encrypt=False;TrustServerCertificate=True")]
         public string db_241245ConnectionString {
             get {
                 return ((string)(this["db_241245ConnectionString"]));
