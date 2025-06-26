@@ -86,11 +86,23 @@
     <Compile Include="Formulários\frmConsultaPessoas.Designer.cs">
       <DependentUpon>frmConsultaPessoas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulários\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulários\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulários\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulários\frmVisualizaRelatorioPessoas.cs">
       <SubType>Form</SubType>
@@ -107,22 +119,22 @@
     <EmbeddedResource Include="Formulários\frmConsultaPessoas.resx">
       <DependentUpon>frmConsultaPessoas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulários\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmVisualizaRelatorioPessoas.resx">
       <DependentUpon>frmVisualizaRelatorioPessoas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Relatórios\Relaatorio_Pessoas.rdlc" />
     <None Include="Dados\DataSet_Agenda.xsc">
       <DependentUpon>DataSet_Agenda.xsd</DependentUpon>
